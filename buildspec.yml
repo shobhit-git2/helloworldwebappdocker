@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: openjdk8
+      java: jdk8
   pre_build:
     commands:
       - echo Just listing basic information about the environment
