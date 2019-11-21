@@ -7,7 +7,7 @@ phases:
   pre_build:
     commands:
       - echo Just listing basic information about the environment
-      - which mvn
+      # which mvn
       - mvn -version
       - pwd
   build:
