@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-      docker: 18
-      #commands:
-        #- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+      #docker: 18
+      commands:
+        - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
   pre_build:
     commands:
       # echo Just listing basic information about the environment
