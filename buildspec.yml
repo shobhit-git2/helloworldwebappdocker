@@ -18,7 +18,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      mvn package
+      - mvn package
       - docker build -t helloworldwebapp:v1 -f HelloWorldDockerfile .
       - docker tag helloworldwebapp:v1 shobhitdockeribm/helloworldwebapp:v1
       #- mvn package
@@ -26,7 +26,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Working on creating the tar ball with the WAR and AppSpec file for CodeDeploy
-      docker push shobhitdockeribm/helloworldwebapp:v1
+      - docker push shobhitdockeribm/helloworldwebapp:v1
       #- mkdir appfiles
       #- cd appfiles
       #- cp ../target/HelloWorld-2.war .
