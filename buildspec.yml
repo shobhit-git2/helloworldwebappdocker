@@ -12,15 +12,15 @@ phases:
       #- echo Just listing basic information about the environment
       -echo logging in docker images
       # which mvn
-      docker login -u shobhitdockeribm -p lastweek123
+      - docker login -u shobhitdockeribm -p lastweek123
       - mvn -version
       - pwd
   build:
     commands:
       - echo Build started on `date`
       mvn package
-      docker build -t helloworldwebapp:v1 -f HelloWorldDockerfile .
-      docker tag helloworldwebapp:v1 shobhitdockeribm/helloworldwebapp:v1
+      - docker build -t helloworldwebapp:v1 -f HelloWorldDockerfile .
+      - docker tag helloworldwebapp:v1 shobhitdockeribm/helloworldwebapp:v1
       #- mvn package
   post_build:
     commands:
