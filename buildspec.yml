@@ -12,6 +12,7 @@ phases:
       # echo Just listing basic information about the environment
       - echo logging in docker images
       # which mvn
+      - docker version
       - docker login -u shobhitdockeribm -p lastweek123
       - mvn -version
       - pwd
