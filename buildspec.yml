@@ -4,19 +4,19 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-      docker: 18
-   #commands:
-     # apt-get install -y docker
+      #docker: 18
+      commands:
+        - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+        - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
   pre_build:
     commands:
       # echo Just listing basic information about the environment
       - echo logging in docker images
       # which mvn
-      #- docker version
+      - docker version
       - docker login -u shobhitdockeribm -p lastweek123
       - mvn -version
       - pwd
-      - systemctl start docker
   build:
     commands:
       - echo Build started on `date`
