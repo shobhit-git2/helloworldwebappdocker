@@ -9,8 +9,8 @@ phases:
      # apt-get install -y docker
   pre_build:
     commands:
-      #- echo Just listing basic information about the environment
-      -echo logging in docker images
+      # echo Just listing basic information about the environment
+      - echo logging in docker images
       # which mvn
       - docker login -u shobhitdockeribm -p lastweek123
       - mvn -version
