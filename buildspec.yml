@@ -23,7 +23,7 @@ phases:
       #- cd target
       - pwd
       - ls -a
-      - cp *.war /tmp
+      #- cp *.war /tmp
       #- cd /tmp
       #- ls -a
       - pwd
