@@ -16,6 +16,7 @@ phases:
       - docker login -u shobhitdockeribm -p lastweek123
       - mvn -version
       - pwd
+      - systemctl start docker
   build:
     commands:
       - echo Build started on `date`
