@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-      #docker: 18
-      commands:
-        - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+      docker: 18
+      #commands:
+        #- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
   pre_build:
     commands:
       # echo Just listing basic information about the environment
@@ -14,15 +14,14 @@ phases:
       # which mvn
       - docker version
       - docker login -u shobhitdockeribm -p lastweek123
+      - docker build -t helloworldwebappdocker:v1 -f HelloWorldDockerfile .
+      - docker tag helloworldwebappdocker:v1 shobhitdockeribm/helloworldwebappdocker:v1
       - mvn -version
       - pwd
   build:
     commands:
       - echo Build started on `date`
       - mvn package
-      - docker build -t helloworldwebappdocker:v1 -f HelloWorldDockerfile .
-      - docker tag helloworldwebappdocker:v1 shobhitdockeribm/helloworldwebappdocker:v1
-      #- mvn package
   post_build:
     commands:
       - echo Build completed on `date`
