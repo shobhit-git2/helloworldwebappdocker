@@ -1,10 +1,12 @@
 version: 0.2
 
 phases:
-  #install:
-   # runtime-versions:
+  install:
+    runtime-versions:
       java: corretto11
-      apt-get install -y docker
+      docker: 18
+   #commands:
+     # apt-get install -y docker
   pre_build:
     commands:
       #- echo Just listing basic information about the environment
