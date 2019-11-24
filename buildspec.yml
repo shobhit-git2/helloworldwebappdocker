@@ -19,9 +19,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - mvn package
       - docker build -t helloworldwebappdocker:v1 -f HelloWorldDockerfile .
       - docker tag helloworldwebappdocker:v1 shobhitdockeribm/helloworldwebappdocker:v1
-      - mvn package
   post_build:
     commands:
       - echo Build completed on `date`
