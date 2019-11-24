@@ -20,10 +20,7 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn package
-      - mkdir appfiles
-      - cp ../target/HelloWorld-1.war .
-      - cp ../appspec.yml .
-      - cd ..
+      - pwd
       - docker build -t helloworldwebappdocker:v1 -f HelloWorldDockerfile .
       - docker tag helloworldwebappdocker:v1 shobhitdockeribm/helloworldwebappdocker:v1
   post_build:
@@ -33,7 +30,7 @@ phases:
       - docker push shobhitdockeribm/helloworldwebappdocker:v1
       #- mkdir appfiles
       #- cd appfiles
-      #- cp ../target/HelloWorld-2.war .
+      #- cp ../target/HelloWorld-1.war .
       #- cp ../appspec.yml .
       #- ls -al
       #- tar -zcvf ../target/HelloWorld2.tar.gz *.*
