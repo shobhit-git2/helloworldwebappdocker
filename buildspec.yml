@@ -23,7 +23,7 @@ phases:
       - cd target
       - pwd
       - ls -a
-      - cp * /tmp
+      - cp *.war /tmp
       - cd /tmp
       - docker build -t helloworldwebappdocker:v1 -f HelloWorldDockerfile .
       - docker tag helloworldwebappdocker:v1 shobhitdockeribm/helloworldwebappdocker:v1
