@@ -29,7 +29,7 @@
 		<br><br>
 		<a href="#" id="run_button" class="btn btn-success" onclick="skl_form.submit();">Go ahead, try it!</a>
 	</form>
-	<br><br>Application version - v9.3
+	<br><br>Application version - v9.4
 </body>
 
 </html>
